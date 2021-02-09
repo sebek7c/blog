@@ -1,0 +1,51 @@
+@import "./_variables";
+@import "./_post";
+@import "./_posts-layout";
+@import "./_home";
+@import "./_about-card";
+@import "./_footer";
+@import "./_header";
+@import "./_header-title";
+@import "./_navigation";
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-weight: 500;
+  margin: 0;
+  background: #999;
+}
+
+h1 {
+  font-size: 1.5rem;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.row {
+  margin: 4em 20px;
+
+  @media screen and (max-width: 767px) {
+    margin: 2em 0px;
+  }
+}
+
+.overlay::before {
+  z-index: 1;
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    transparent 18%,
+    rgba(0, 0, 0, 0.8) 99%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}

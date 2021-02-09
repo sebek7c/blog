@@ -1,0 +1,12 @@
+.posts-layout {
+  display: grid;
+  grid-row-gap: 2rem; /* Will be used instead by browsers that do not support `row-gap` */
+  row-gap: 2rem;
+}
+
+@media screen and (max-width: 920px) {
+  .posts-layout {
+    display: flex;
+    flex-direction: column;
+  }
+}

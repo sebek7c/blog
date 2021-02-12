@@ -1,6 +1,5 @@
 import React, { useRef, useEffect, useState } from "react";
 import { gsap } from "gsap";
-import { TimelineMax } from "gsap";
 import { ExpoScaleEase } from "gsap/EasePack";
 import { Link } from "react-router-dom";
 

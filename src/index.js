@@ -4,10 +4,39 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import "./assets/scss/base.scss";
 import "antd/dist/antd.css";
+import {
+  ApolloProvider,
+  ApolloClient,
+  InMemoryCache,
+  HttpLink,
+  from,
+} from "@apollo/client";
+import { onError } from "@apollo/client/link/error";
+
+const errorLink = onError(({ graphqlErrors, networkError }) => {
+  if (graphqlErrors) {
+    graphqlErrors.map(({ location, path, message }) => {
+      alert(`GraphQL error ${message}`);
+    });
+  }
+});
+const link = from([
+  errorLink,
+  new HttpLink({
+    uri:
+      "https://api-eu-central-1.graphcms.com/v2/ckkznc4krzrvj01xs5h9wfcc6/master",
+  }),
+]);
+const client = new ApolloClient({
+  link: link,
+  cache: new InMemoryCache(),
+});
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
   </React.StrictMode>,
   document.getElementById("root")
 );

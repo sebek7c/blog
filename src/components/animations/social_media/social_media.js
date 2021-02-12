@@ -40,7 +40,7 @@ export default function SocialMediaSvg() {
   });
 
   return (
-    <div ref={wrapper}>
+    <div ref={wrapper} style={{ marginTop: "40px" }}>
       <Socials />
     </div>
   );

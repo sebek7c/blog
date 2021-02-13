@@ -3,38 +3,49 @@ import PropTypes from "prop-types";
 import gsap from "gsap";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import Post from "./post";
-import { Pagination } from "antd";
+import { Pagination, Spin } from "antd";
+import ARTICLES_QUERY from "../../query/all-articles/index";
+import { useQuery } from "@apollo/client";
 
 gsap.registerPlugin(ScrollToPlugin);
 
-const PostsLayout = ({ posts }) => {
+const PostsLayout = () => {
+  const { loading, error, data } = useQuery(ARTICLES_QUERY);
+  const [articles, setArticles] = useState([]);
   const [pageSize, setPageSize] = useState(3);
   const [current, setCurrent] = useState(1);
   const layout = useRef(null);
 
-  const paginatedPosts = useMemo(() => {
+  useEffect(() => {
+    if (data) {
+      setArticles(data.articles);
+    } else if (error) return `Error! ${error.message}`;
+    else if (loading) return "Loading...";
+  }, [data]);
+
+  const paginatedArticles = useMemo(() => {
     const lastIndex = current * pageSize;
     const firstIndex = lastIndex - pageSize;
 
-    return posts.slice(firstIndex, lastIndex);
-  }, [current, pageSize]);
+    return articles.slice(firstIndex, lastIndex);
+  }, [current, pageSize, articles]);
 
-  useEffect(() => {
+  function scrollTop() {
     gsap.to(window, { duration: 1, scrollTo: layout.current });
-  }, [current, pageSize]);
+  }
 
   return (
     <section className="posts-layout" ref={layout}>
-      {paginatedPosts.map((post, index) => (
-        <Post key={index} post={post} />
+      {paginatedArticles.map((article) => (
+        <Post key={article.slug} post={article} />
       ))}
       <Pagination
         simple
         showSizeChanger
         onShowSizeChange={setPageSize}
         pageSize={pageSize}
-        total={posts.length}
-        defaultCurrent={current}
+        total={articles.length}
+        current={current}
         style={{ display: "flex", justifyContent: "center" }}
         onChange={setCurrent}
       />

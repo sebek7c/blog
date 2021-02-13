@@ -50,10 +50,7 @@ export default function HeaderTitle() {
         <span ref={span1}>Witam na moim blogu.</span>
       </div>
       <div className="line" ref={line2}>
-        <span ref={span2}>
-          {" "}
-          The mission and the vision are to explore, scavenge and play
-        </span>
+        <span ref={span2}> Nazywam się Monika</span>
       </div>
       <div className="line" ref={line3}>
         <span ref={span3}>

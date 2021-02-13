@@ -1,9 +1,7 @@
 import React, { useState, useMemo, useRef, useEffect } from "react";
 import PostsLayout from "../components/common/posts-layout";
 import SocialMediaSvg from "../components/animations/social_media/social_media";
-import trending from "../assets/mocks/trending";
-import featured from "../assets/mocks/trending";
-import { Row, Col, BackTop } from "antd";
+import { Row, Col, BackTop, Divider } from "antd";
 import { UpCircleFilled } from "@ant-design/icons";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -12,7 +10,6 @@ import Header from "../components/header";
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Home() {
-  //  Gsap animations
   const postRef = useRef(null);
   const socialsRef = useRef(null);
 
@@ -50,8 +47,6 @@ export default function Home() {
     );
   }, []);
 
-  const recentPosts = [...featured, ...trending];
-
   return (
     <>
       <Header />
@@ -77,6 +72,7 @@ export default function Home() {
                   Media Społecznościowe
                 </h1>
               </div>
+              <Divider />
               <SocialMediaSvg />
             </Col>
             <Col
@@ -96,7 +92,8 @@ export default function Home() {
                   Ostatnie Posty
                 </h1>
               </div>
-              <PostsLayout posts={recentPosts} />
+              <Divider />
+              <PostsLayout />
             </Col>
           </Row>
         </div>

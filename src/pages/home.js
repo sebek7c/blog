@@ -1,11 +1,13 @@
 import React, { useState, useMemo, useRef, useEffect } from "react";
 import PostsLayout from "../components/common/posts-layout";
-import SocialMediaSvg from "../components/animations/social_media/social_media";
-import { Row, Col, BackTop, Divider } from "antd";
-import { UpCircleFilled } from "@ant-design/icons";
+import { Row, Col, Divider } from "antd";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Header from "../components/header";
+import ContactsSvg from "../components/animations/contacts/contacts";
+import WelcomeTextReveal from "../components/common/welcome-text";
+import { BackTop } from "antd";
+import { UpCircleFilled } from "@ant-design/icons";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -51,6 +53,7 @@ export default function Home() {
     <>
       <Header />
       <section className="container home">
+        <WelcomeTextReveal />
         <div className="row">
           <Row
             gutter={[{ xs: 0, sm: 0, md: 24, lg: 32, xl: 32, xxl: 48 }]}
@@ -73,7 +76,7 @@ export default function Home() {
                 </h1>
               </div>
               <Divider />
-              <SocialMediaSvg />
+              <ContactsSvg />
             </Col>
             <Col
               xs={{ span: 24, order: 2 }}
@@ -96,10 +99,10 @@ export default function Home() {
               <PostsLayout />
             </Col>
           </Row>
+          <BackTop>
+            <UpCircleFilled style={{ fontSize: "38px" }} />
+          </BackTop>
         </div>
-        <BackTop>
-          <UpCircleFilled style={{ fontSize: "40px" }} />
-        </BackTop>
       </section>
     </>
   );

@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+.about-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+  background-color: transparent;
+}
+.about-me-title-container {
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  height: 70vh;
+}
+.about-me-title {
+  transform: rotate(90deg);
+  font-size: 8em;
+  font-weight: bold;
+  color: #e4e5ea;
+  font-family: "Varela Round", sans-serif;
+
+  @media screen and (max-width: 900px) {
+    font-size: 4em;
+  }
+}
+.about-me-name {
+  font-size: 2em;
+  font-weight: bold;
+  color: black;
+  font-family: "Varela Round", sans-serif;
+}
+.about-me-image-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+
+  @media screen and (max-width: 900px) {
+    justify-content: center;
+    align-items: baseline;
+  }
+}
+.about-me-image {
+  background-image: url(../images/34.jpg);
+  background-size: cover;
+  width: 30vw;
+  height: 30vw;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  top: -10vh;
+  right: 20vw;
+
+  @media screen and (max-width: 900px) {
+    width: 50vw;
+    height: 50vw;
+    top: -10vh;
+    right: 20vw;
+  }
+}
+
+.about-me-circle {
+  background-color: white;
+  height: 50%;
+  width: 50%;
+  border-radius: 50%;
+}

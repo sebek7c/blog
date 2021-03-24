@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,400;1,300;1,400&display=swap");
 
 .post-container {
-  background: #fff;
   border-radius: 10px 10px 10px 10px;
   // box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07), 0 2px 4px rgba(0, 0, 0, 0.07),
   //   0 4px 8px rgba(0, 0, 0, 0.07), 0 8px 16px rgba(0, 0, 0, 0.07),
@@ -19,6 +18,7 @@
     width: 100%;
     margin-bottom: 24px;
     border-radius: 0;
+    box-shadow: none;
   }
   @media screen and (max-width: 959px) {
     width: 100%;
@@ -27,21 +27,6 @@
   .post-text {
     color: #4b4f56;
     font-size: 18px;
-  }
-}
-
-.post-cover {
-  background-size: cover;
-  border-radius: 10px 10px 0px 0px;
-  height: 400px;
-  // box-shadow: inset hsla(0, 0, 0, 0.2) 0 64px 64px 16px;
-  position: relative;
-  background-position: center center;
-  cursor: pointer;
-  @media screen and (max-width: 767px) {
-    width: 100%;
-    height: 275px;
-    border-radius: 0;
   }
 }
 
@@ -54,14 +39,17 @@
   display: flex;
   justify-content: space-around;
   flex-direction: column;
+  background: #fff;
+  opacity: 0.9;
 
   .post-title {
     font-size: 24px;
     font-weight: 400;
     margin-block-start: 0;
     margin-block-end: 0px;
-    color: black;
+    color: #5c5c5c;
     margin-bottom: 10px;
+    margin-top: 10px;
   }
 
   .post-date {
@@ -71,5 +59,12 @@
     display: flex;
     justify-content: space-between;
     flex-direction: row-reverse;
+  }
+}
+
+.image-post {
+  border-radius: 5px;
+  @media screen and (max-width: 767px) {
+    border-radius: 0;
   }
 }

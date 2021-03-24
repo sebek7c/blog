@@ -6,10 +6,14 @@ const ARTICLES_QUERY = gql`
       date
       text {
         text
+        markdown
       }
       title
       image {
         url
+        handle
+        height
+        width
       }
     }
   }

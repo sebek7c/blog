@@ -7,7 +7,7 @@
   user-select: none;
   cursor: pointer;
   position: fixed;
-  z-index: 20;
+  z-index: 1003;
   top: 1rem;
   right: 1rem;
   background: transparent;
@@ -21,7 +21,7 @@
   transition-property: stroke, stroke-dasharray, stroke-dashoffset;
   transition-timing-function: ease;
   transition-duration: 400ms;
-  stroke: white;
+  stroke: #333333;
   stroke-width: 5.5;
   stroke-linecap: round;
 }
@@ -53,7 +53,7 @@
   position: fixed;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  z-index: 1002;
   display: none;
   align-items: center;
   justify-content: center;
@@ -82,6 +82,8 @@
   cursor: pointer;
   transition: all ease 500ms;
   position: relative;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 .navbar ul li a:before {
   content: attr(data-text);
@@ -109,6 +111,6 @@
   top: 1rem;
   right: 1rem;
   border-radius: 50%;
-  z-index: 1;
+  z-index: 1000;
   opacity: 0.8;
 }

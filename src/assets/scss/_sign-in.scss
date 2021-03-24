@@ -1,0 +1,59 @@
+.have-an-account {
+  margin-bottom: 28px;
+  font-weight: lighter;
+}
+
+.sign-in-buttons {
+  display: flex;
+  flex-direction: column;
+
+  .sign-in-facebook {
+    background-color: #3b5998 !important;
+    border: white !important;
+    color: white !important;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media screen and (max-width: 767px) {
+      height: 6vh;
+    }
+  }
+
+  .sign-in-google {
+    margin-bottom: 18px;
+    border-color: none !important;
+    color: black !important;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: 767px) {
+      height: 6vh;
+    }
+  }
+}
+
+.sign-in-input {
+  height: 5vh;
+
+  @media screen and (max-width: 767px) {
+    height: 6vh;
+  }
+}
+
+.sign-in-button {
+  height: 5vh !important;
+  background: linear-gradient(360deg, #dee1e1 10%, #f4f4f4 360%) !important;
+  border-color: linear-gradient(360deg, #dee1e1 10%, #f4f4f4 360%) !important;
+  color: black !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: none !important;
+
+  @media screen and (max-width: 767px) {
+    height: 6vh !important;
+  }
+}

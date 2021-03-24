@@ -1,0 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+.article-preview {
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
+  color: #5c5c5c;
+  font-size: 16px;
+}
+
+.comm-count {
+  font-family: "Montserrat", sans-serif;
+}
+
+.add-comment-button {
+  height: 5vh !important;
+  background: linear-gradient(360deg, #dee1e1 10%, #f4f4f4 360%) !important;
+  border-color: none !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  box-shadow: none !important;
+  color: black !important;
+  border-radius: 32px !important;
+
+  @media screen and (max-width: 767px) {
+    height: 6vh !important;
+  }
+}
+
+.ant-btn:hover,
+.ant-btn:focus {
+  color: none;
+  background: none;
+  border-color: none;
+}
+
+.ant-btn-primary {
+  border-color: white !important;
+}
+
+.comment-input {
+  padding: 14px !important;
+  color: rgba(117, 117, 117, 1) !important;
+  font-size: 16px !important;
+  border-radius: 4px !important;
+}

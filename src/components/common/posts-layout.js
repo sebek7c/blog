@@ -6,6 +6,7 @@ import Post from "./post";
 import { Pagination, Spin } from "antd";
 import ARTICLES_QUERY from "../../query/all-articles/index";
 import { useQuery } from "@apollo/client";
+import { ReactComponent as OwlSVG } from "../animations/svg/owl.svg";
 
 gsap.registerPlugin(ScrollToPlugin);
 
@@ -14,13 +15,42 @@ const PostsLayout = () => {
   const [articles, setArticles] = useState([]);
   const [pageSize, setPageSize] = useState(3);
   const [current, setCurrent] = useState(1);
-  const layout = useRef(null);
 
   useEffect(() => {
     if (data) {
       setArticles(data.articles);
-    } else if (error) return `Error! ${error.message}`;
-    else if (loading) return "Loading...";
+    } else if (error)
+      return (
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            flexDirection: "column",
+          }}
+        >
+          <OwlSVG />
+          <span style={{ fontSize: "18px", marginBottom: "10px" }}>
+            {"Wystąpił błąd."}
+          </span>
+          <span style={{ fontSize: "18px" }}>
+            {" Sprawdź połączenie z internetem"}
+          </span>
+        </div>
+      );
+    else if (loading)
+      return (
+        <div
+          style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "100vh",
+          }}
+        >
+          <Spin size="large" />
+        </div>
+      );
   }, [data]);
 
   const paginatedArticles = useMemo(() => {
@@ -31,11 +61,10 @@ const PostsLayout = () => {
   }, [current, pageSize, articles]);
 
   function scrollTop() {
-    gsap.to(window, { duration: 1, scrollTo: layout.current });
+    gsap.to(window, { duration: 1, scrollTo: ref.current });
   }
-
   return (
-    <section className="posts-layout" ref={layout}>
+    <section className="posts-layout">
       {paginatedArticles.map((article) => (
         <Post key={article.slug} post={article} />
       ))}
@@ -48,6 +77,7 @@ const PostsLayout = () => {
         current={current}
         style={{ display: "flex", justifyContent: "center" }}
         onChange={setCurrent}
+        onClick={scrollTop}
       />
     </section>
   );

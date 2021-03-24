@@ -7,9 +7,14 @@ export default function Foooter() {
   return (
     <Layout>
       <Footer
-        style={{ background: "#333333", textAlign: "center", color: "white" }}
+        style={{
+          textAlign: "center",
+          color: "#6d6d6d",
+          backgroundColor: "#f3f3f4",
+          fontWeight: "lighter",
+        }}
       >
-        Monika Maciejczuk ©2021
+        Website developed by Sebastian Maciejczuk ©2021
       </Footer>
     </Layout>
   );

@@ -1,0 +1,60 @@
+.have-an-account {
+  margin-bottom: 28px;
+  font-weight: lighter;
+}
+
+.sign-up-buttons {
+  display: flex;
+  flex-direction: column;
+
+  .sign-up-facebook {
+    background-color: #3b5998 !important;
+    color: white !important;
+    border: white !important;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: 767px) {
+      height: 6vh;
+    }
+  }
+
+  .sign-up-google {
+    margin-bottom: 18px;
+    color: black !important;
+    border-color: none !important;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @media screen and (max-width: 767px) {
+      height: 6vh;
+    }
+  }
+}
+
+.sign-up-input {
+  height: 5vh;
+
+  @media screen and (max-width: 767px) {
+    height: 6vh;
+  }
+}
+
+.sign-up-button {
+  height: 5vh !important;
+  background: linear-gradient(360deg, #dee1e1 10%, #f4f4f4 360%) !important;
+  border-color: linear-gradient(360deg, #dee1e1 10%, #f4f4f4 360%) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: black !important;
+  box-shadow: none !important;
+
+  @media screen and (max-width: 767px) {
+    height: 6vh !important;
+  }
+}

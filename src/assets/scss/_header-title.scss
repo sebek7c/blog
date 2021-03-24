@@ -5,9 +5,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: #444444;
   font-weight: lighter;
-  max-width: 1400px;
+  // max-width: 1400px;
+  -webkit-text-stroke-width: thin;
 
   .line {
     width: 80%;
@@ -17,8 +18,13 @@
 
     span {
       position: absolute;
-      font-size: 2rem;
+      font-size: 2.5rem;
       line-height: 4.2rem;
+
+      @media screen and (max-width: 767px) {
+        font-size: 2rem;
+        font-weight: 300;
+      }
     }
   }
 }

@@ -1,0 +1,23 @@
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+.blog-container {
+  // max-width: 1400px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.blog-title-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 94vh;
+}
+.blog-title {
+  transform: rotate(90deg);
+  font-size: 8em;
+  font-weight: bold;
+  color: #e4e5ea;
+  font-family: "Varela Round", sans-serif;
+
+  @media screen and (max-width: 900px) {
+    font-size: 3em;
+  }
+}

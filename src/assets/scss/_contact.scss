@@ -1,0 +1,31 @@
+@import url("https://fonts.googleapis.com/css2?family=Varela+Round&display=swap");
+.contact-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+.contact-title-container {
+  display: flex;
+  // justify-content: center;
+  align-items: center;
+  height: 94vh;
+}
+.contact-title {
+  transform: rotate(90deg);
+  font-size: 8em;
+  font-weight: bold;
+  color: #e4e5ea;
+  font-family: "Varela Round", sans-serif;
+
+  @media screen and (max-width: 900px) {
+    font-size: 3em;
+  }
+}
+.scoial-icons-contact {
+}
+
+.contact-logo {
+}
+
+.contact-form {
+}

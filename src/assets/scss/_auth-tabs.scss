@@ -1,0 +1,22 @@
+.ant-tabs-ink-bar {
+  background: #5c5c5c !important;
+}
+
+.ant-tabs-tab.ant-tabs-tab-active .ant-tabs-tab-btn {
+  color: black !important;
+}
+
+.modal-button {
+  height: 5vh !important;
+  background: linear-gradient(360deg, #dee1e1 10%, #f4f4f4 360%) !important;
+  border-color: linear-gradient(360deg, #dee1e1 10%, #f4f4f4 360%) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: #5c5c5c !important;
+  box-shadow: none !important;
+
+  @media screen and (max-width: 767px) {
+    height: 6vh !important;
+  }
+}
